@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:treemap="clr-namespace:Syncfusion.Maui.TreeMap;assembly=Syncfusion.Maui.TreeMap"
+             xmlns:local="clr-namespace:TreeMapChart"
+             x:Class="TreeMapChart.MainPage">
+
+    <ContentPage.Content>
+        <!-- Border around entire content -->
+        <Border Margin="10,18,10,10" Padding="5" Stroke="{OnPlatform Default=Black, iOS=White}" StrokeThickness="2" StrokeShape="RoundRectangle 10">
+
+            <Grid RowDefinitions="Auto,*">
+                <!-- Title Section -->
+                <HorizontalStackLayout Grid.Row="0">
+                    <Image Source="cup.png" WidthRequest="50" HeightRequest="60" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="ICC Men's World Cup Winners 1975 - 2025"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="{OnPlatform Default=25, Android=15, iOS=15}"
+                           Padding="3"
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+
+                <!-- TreeMap Section -->
+                <treemap:SfTreeMap x:Name="treeMapChart"
+                                   DataSource="{Binding CountryTitles}"
+                                   Grid.Row="1"
+                                   Margin="8"
+                                   RangeColorValuePath="TotalTitles"
+                                   PrimaryValuePath="TotalTitles"
+                                   ShowToolTip="True"
+                                   SelectionMode="Single"
+                                   SelectionChanged="TreeMapChart_SelectionChanged">
+
+                    <!-- Leaf Item Settings -->
+                    <treemap:SfTreeMap.LeafItemSettings>
+                        <treemap:TreeMapLeafItemSettings LabelPath="Country" Spacing="3">
+                            <treemap:TreeMapLeafItemSettings.TextStyle>
+                                <treemap:TreeMapTextStyle TextColor="White" FontSize="{OnPlatform Default=18, Android=12, iOS=11}" FontAttributes="Bold"/>
+                            </treemap:TreeMapLeafItemSettings.TextStyle>
+                        </treemap:TreeMapLeafItemSettings>
+                    </treemap:SfTreeMap.LeafItemSettings>
+
+                    <!-- Tooltip Template -->
+                    <treemap:SfTreeMap.ToolTipTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal">
+                                <Rectangle HeightRequest="30" WidthRequest="8" Fill="{Binding Background}"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding PrimaryValueText}" FontSize="12.5" Padding="5,0,0,0" FontAttributes="Bold" TextColor="White"/>
+                                    <Label Text="{Binding Item.TotalTitles, StringFormat='Titles : {0}'}" FontSize="12" Padding="5,0,0,0" Margin="0,2,0,0" TextColor="White"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </treemap:SfTreeMap.ToolTipTemplate>
+
+                </treemap:SfTreeMap>
+            </Grid>
+        </Border>
+    </ContentPage.Content>
+</ContentPage>
+             
