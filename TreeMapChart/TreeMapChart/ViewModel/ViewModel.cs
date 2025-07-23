@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace TreeMapChart
@@ -72,28 +72,12 @@ namespace TreeMapChart
             }
         }
 
-        private ObservableCollection<Brush>? _customBrushes;
-
-        public ObservableCollection<Brush>? CustomBrushes
-        {
-            get => _customBrushes;
-            set
-            {
-                if (_customBrushes != value)
-                {
-                    _customBrushes = value;
-                    OnPropertyChanged(nameof(CustomBrushes));
-                }
-            }
-        }
-
         /// <summary>
         /// Initializes a new instance of the ViewModel class and loads initial data.
         /// </summary>
         public ViewModel()
         {
             CountryTitles = LoadCountryTitles();
-            CustomBrushes = LoadCustomBrushes();
         }
 
         /// <summary>
@@ -112,21 +96,6 @@ namespace TreeMapChart
                 new WorldCupStats { Country = "Sri Lanka", TotalTitles = 3 },
                 new WorldCupStats { Country = "New Zealand", TotalTitles = 2 },
                 new WorldCupStats { Country = "South Africa", TotalTitles = 2 },
-            ];
-        }
-
-        /// <summary>
-        /// Static method to get the initial collection of custom brushes.
-        /// </summary>
-        private static ObservableCollection<Brush> LoadCustomBrushes()
-        {
-            // Initialize collection with predefined cricket statistics
-            return
-            [
-                new SolidColorBrush (Color.FromArgb("#1060DC")),
-                new SolidColorBrush (Color.FromArgb("#00B553")),
-                new SolidColorBrush (Color.FromArgb("#DA6902")),
-                new SolidColorBrush (Color.FromArgb("#C71969")),
             ];
         }
 

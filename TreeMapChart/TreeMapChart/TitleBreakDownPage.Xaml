@@ -34,7 +34,6 @@
                                           Radius="0.8"
                                           ShowDataLabels="True"
                                           ItemsSource="{Binding SelectedCountryDetails}"
-                                          PaletteBrushes="{Binding CustomBrushes}"
                                           XBindingPath="Category" 
                                           YBindingPath="Titles">
                     <chart:DoughnutSeries.CenterView>

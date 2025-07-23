@@ -71,20 +71,20 @@ namespace TreeMapChart
                 "Australia" =>
                 [
                     new() { Category = "ODI World Cups", Titles = 6 },
-                    new() { Category = "T20 World Cups", Titles = 1 },
                     new() { Category = "Champions Trophies", Titles = 2 },
+                    new() { Category = "T20 World Cups", Titles = 1 },
                     new() { Category = "WTC", Titles = 1 }
                 ],
                 "India" =>
                 [
+                    new() { Category = "Champions Trophies", Titles = 3 },
                     new() { Category = "ODI World Cups", Titles = 2 },
                     new() { Category = "T20 World Cups", Titles = 2 },
-                    new() { Category = "Champions Trophies", Titles = 3 },
                 ],
                 "England" =>
                 [
-                    new() { Category = "ODI World Cups", Titles = 1 },
                     new() { Category = "T20 World Cups", Titles = 2 },
+                    new() { Category = "ODI World Cups", Titles = 1 },
                 ],
                 "West Indies" =>
                 [
