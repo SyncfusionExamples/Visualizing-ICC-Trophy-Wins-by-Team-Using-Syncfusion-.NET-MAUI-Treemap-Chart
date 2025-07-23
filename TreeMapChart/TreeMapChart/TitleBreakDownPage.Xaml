@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TreeMapChart.TitleBreakDownPage"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:TreeMapChart" Background="White"
+             x:DataType="local:ViewModel">
+
+    <Border Margin="{OnPlatform Default=40,Android=10,iOS=10}" Padding="5" Stroke="{OnPlatform Default=Black, iOS=White}" StrokeThickness="2" StrokeShape="RoundRectangle 10">
+        <Grid RowDefinitions="Auto, *">
+                <!-- Title -->
+                <Label Text="{Binding SelectedCountry, StringFormat='{}{0} - ICC Trophy Breakdown'}" 
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"
+                       FontSize="{OnPlatform Default=25, Android=18, iOS=18}"
+                       Padding="3"
+                       Margin="0,10"
+                       FontAttributes="Bold"/>
+
+                <!-- Doughnut Chart -->
+                <chart:SfCircularChart Grid.Row="1" VerticalOptions="Fill">
+
+                    <!-- Adding Legend at the Bottom -->
+                    <chart:SfCircularChart.Legend>
+                        <chart:ChartLegend Placement="Top"/>
+                    </chart:SfCircularChart.Legend>
+
+                    <!-- Doughnut Series Customization -->
+                    <chart:DoughnutSeries x:Name="series" 
+                                          Stroke="White" 
+                                          StrokeWidth="4"
+                                          InnerRadius="0.6"
+                                          StartAngle="-90"
+                                          EndAngle="270"
+                                          Radius="0.8"
+                                          ShowDataLabels="True"
+                                          ItemsSource="{Binding SelectedCountryDetails}"
+                                          XBindingPath="Category" 
+                                          YBindingPath="Titles">
+                    <chart:DoughnutSeries.CenterView>
+                        <StackLayout x:Name="layout" HeightRequest="{Binding CenterHoleSize}" WidthRequest="{Binding CenterHoleSize}">
+                            <Path x:Name="pathData" Scale="1.5" Fill="Black" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+                            <Label FontSize="15" Margin="0,10,0,0" Padding="2" x:Name="label"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center" VerticalOptions="StartAndExpand"/>
+                        </StackLayout>
+                    </chart:DoughnutSeries.CenterView>
+                </chart:DoughnutSeries>
+                </chart:SfCircularChart>
+        </Grid>
+    </Border>
+</ContentPage>
