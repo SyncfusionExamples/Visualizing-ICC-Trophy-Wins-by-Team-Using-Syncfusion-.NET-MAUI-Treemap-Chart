@@ -28,7 +28,7 @@ Each trophy category is assigned a distinct color, making it easy to visually di
 
 After executing these code examples, we will get the output that resembles the following image.
 
-![TreeMap Chart](https://github.com/user-attachments/assets/30de8bc2-37ff-4ed7-b65a-9d20109d7b65)
+![TreemapChart](https://github.com/user-attachments/assets/2a5c1bff-e288-43cf-80a5-066691cb16c3)
 
 ## Resources
 
