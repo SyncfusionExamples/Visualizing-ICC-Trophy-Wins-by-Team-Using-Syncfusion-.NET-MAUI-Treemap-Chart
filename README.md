@@ -33,8 +33,9 @@ After executing these code examples, we will get the output that resembles the f
 ## Resources
 
 - [Syncfusion .NET MAUI TreeMap Documentation](https://help.syncfusion.com/maui/treemap/overview)
-- [Syncfusion .NET MAUI Circular Chart Documentation](https://help.syncfusion.com/maui/cartesian-charts/overview)
+- [Syncfusion .NET MAUI Circular Chart Documentation](https://help.syncfusion.com/maui-toolkit/circular-charts/overview)
 - [Syncfusion MAUI Controls](https://help.syncfusion.com/maui/introduction/overview)
+- [Syncfusion MAUI Toolkit](https://help.syncfusion.com/maui-toolkit/introduction/overview)
 
 ## Troubleshooting
 
