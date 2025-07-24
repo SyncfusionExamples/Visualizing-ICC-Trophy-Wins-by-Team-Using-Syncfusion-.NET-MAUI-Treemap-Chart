@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
+using Syncfusion.Maui.Toolkit.Hosting;
+
 namespace TreeMapChart
 {
     public static class MauiProgram
@@ -10,6 +12,7 @@ namespace TreeMapChart
             builder
                 .UseMauiApp<App>()
                 .ConfigureSyncfusionCore()
+                .ConfigureSyncfusionToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
