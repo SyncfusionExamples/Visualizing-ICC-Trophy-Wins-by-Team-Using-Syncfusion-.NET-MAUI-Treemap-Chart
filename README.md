@@ -43,4 +43,4 @@ After executing these code examples, we will get the output that resembles the f
 
 If you are facing a path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
 
-For a step-by-step procedure, refer to the [Visualizing ICC Trophy Wins by Team Using Syncfusion .NET MAUI Treemap Chart](#).
+For a step-by-step procedure, refer to the [Visualizing ICC Trophy Wins by Team Using Syncfusion .NET MAUI Treemap Chart](https://www.syncfusion.com/blogs/post/icc-trophy-wins-treemap-chart).
